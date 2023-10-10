@@ -2,13 +2,14 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <string.h>
+#include <math.h>
+#include <windows.h>
 
 #define STRING_SIZE 31
 
 int main(int argc, char const *argv[])
 {
-    FILE *fp = fopen("fprintf_output.txt", "w+");
-    char sp_str[STRING_SIZE] = {"0"};
+    system("cls");
 
     /*
         printf() 函数将数据输出至标准输出，
@@ -38,8 +39,26 @@ int main(int argc, char const *argv[])
     printf(format_str);
     printf("%s", format_str);
 
+    /*
+        转义字符 %g 在打印那些不需要按列对齐的浮点数特别有用。
+        它在打印对应的数值（必须为 double 或 float 类型）时，
+        会去掉该数值尾缀的零，保留六位有效数字 （0.2550000 -> 0.255）
+        当然，也会四舍五入 （0.66666... -> 0.666667）
+    */
+    double pi = 4 * atan(1.0);
+    printf("%g %g %g %g\n", 1/1.0, 1/2.0, 1/3.0, 1/4.0, 0.0);
+    printf("%f %f %f %f\n", 1/1.0, 1/2.0, 1/3.0, 1/4.0, 0.0);
+    printf("PI = %g\n", pi);
+
+    /*
+        当然，有一个数的绝对值大于 999999，
+        按 %g 的格式打印出来就是用科学计数法打印出来的。
+    */
+    printf("%g\n", 123456789.0);    /*结果是 123457e+08*/
 
 
+    FILE *fp = fopen("fprintf_output.txt", "w+");
+    char sp_str[STRING_SIZE] = {"0"};
     /*
         fprintf() 函数将数据输出到任意文件，
         因此第一个参数必须是 FILE 类型的指针。
