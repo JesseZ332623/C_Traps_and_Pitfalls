@@ -4,8 +4,11 @@
 #include <string.h>
 #include <math.h>
 #include <windows.h>
+#include <stdarg.h>
 
 #define STRING_SIZE 31
+
+void Write_Format(char *_str, ...);
 
 int main(int argc, char const *argv[])
 {
@@ -108,7 +111,27 @@ int main(int argc, char const *argv[])
         这种错误是不可能发现不了的。。。
     */
 
+
     
+    /*
+        vprintf() 将数据输出至stdout，它的用法有些特殊，
+        它的参数 truct __va_list_tag *_ArgList 是一个可变参数列表，
+        需要去初始化它,见函数 Write_Format 的实现
+    */
+    const char *vprintf_arg_1 = {"const char *__restrict__ _Format"};
+    const char *vprintf_arg_2 = {"truct __va_list_tag *_ArgList"};
+    Write_Format("Out put to stdout(vprintf(%s, %s))", vprintf_arg_1, vprintf_arg_2);
 
     return EXIT_SUCCESS;
+}
+
+void Write_Format(char *_str, ...)
+{
+    va_list args;
+
+    va_start(args, _str);
+
+    vprintf(_str, args);
+
+    va_end(args);
 }
