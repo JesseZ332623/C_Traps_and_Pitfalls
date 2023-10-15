@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "\"*.exe\"": "\"executable\"",
+        "calcu_aver_age.h": "c"
+    }
+}
