@@ -61,7 +61,7 @@ int main(int argc, char const *argv[])
 
 
     FILE *fp = fopen("fprintf_output.txt", "w+");
-    char sp_str[STRING_SIZE] = {"0"};
+    
     /*
         fprintf() 函数将数据输出到任意文件，
         因此第一个参数必须是 FILE 类型的指针。
@@ -81,7 +81,9 @@ int main(int argc, char const *argv[])
         由于该函数不进行 I/O 操作，因此不会返回负值（当然也不排除有些 C 库的实现会这么做）
         它的返回值同上，代表了输出字符串的个数。
     */
-    sprintf(sp_str, "Out put to other memory\n");
+    char sp_str[STRING_SIZE] = {"0"};
+    printf("sprintf return: %d\n", sprintf(sp_str, "Out put to other memory\n"));
+    printf("%s", sp_str);
 
     /*接下来看一个有点恐怖的错误*/
 #if false
