@@ -34,7 +34,7 @@ void function(char *buffer)
             }
         }
     }
-
+    /*输出 a b c 的值*/
     printf("a = %d, b = %d, c = %d\n", a, b, c);
 }
 
