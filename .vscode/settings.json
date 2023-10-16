@@ -1,6 +1,8 @@
 {
     "files.associations": {
         "\"*.exe\"": "\"executable\"",
-        "calcu_aver_age.h": "c"
+        "calcu_aver_age.h": "c",
+        "assert.h": "c",
+        "binary_tree.h": "c"
     }
 }
