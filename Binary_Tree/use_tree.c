@@ -9,18 +9,20 @@ void print_node(TREE_TYPE _value)
     printf("%d\t", _value);
 }
 
+
+
 int main(int argc, char const *argv[])
 {
-    int _data[3] = {4, 2, 1};
+    TREE_TYPE _data[] = {235, 1345, 125, 325, 52, 2346, 4678};
 
-    printf("Tree Head Node address: %p\n", tree);
-    for (int index = 0; index < 3; ++index)
+    //printf("Tree Head Node address: %p\n", tree + 1);
+    for (int index = 0; index < sizeof(_data) / sizeof(TREE_TYPE); ++index)
     {
         insert(_data[index]);
-        printf("%p\t", find(_data[index]));
     }
     puts("");
     pre_order_traverse(print_node);
     
     return EXIT_SUCCESS;
 }
+

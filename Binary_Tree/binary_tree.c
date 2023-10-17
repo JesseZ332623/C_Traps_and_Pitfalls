@@ -101,8 +101,8 @@ static void do_pre_order_traverse(int current_index, void (*call_back)(TREE_TYPE
     /*当前下标不应该超过数组的大小，并且当前索引对应的值不等于用户传入的值*/
     if (current_index < ARRAY_SIZE && tree[current_index] != 0)
     {
-        call_back(tree[current_index]);
         do_pre_order_traverse(left_child(current_index), call_back);
         do_pre_order_traverse(right_child(current_index), call_back);
+        call_back(tree[current_index]);
     }
 }
