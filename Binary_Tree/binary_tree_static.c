@@ -1,6 +1,7 @@
 #include "./binary_tree.h"
 #include <assert.h>
 
+static TREE_TYPE tree[ARRAY_SIZE];
 
 /**
  *  计算一个节点左孩子的 下标

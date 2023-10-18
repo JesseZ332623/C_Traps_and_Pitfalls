@@ -11,8 +11,6 @@
 /*容纳这颗树的数组的最大元素数*/
 #define ARRAY_SIZE (TREE_SIZE + 1)
 
-static TREE_TYPE tree[ARRAY_SIZE];
-
 /**
  * 向树中添加一个新值，这个值必须不存在与树中。
  * @param _value 要插入的值
