@@ -1,4 +1,4 @@
-#include "./binary_tree.h"
+#include "./include/binary_tree.h"
 #include <assert.h>
 
 static TREE_TYPE tree[ARRAY_SIZE];
