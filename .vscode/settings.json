@@ -9,6 +9,10 @@
         "corecrt_stdio_config.h": "c",
         "_mingw_off_t.h": "c",
         "_mingw_ddk.h": "c",
-        "malloc.h": "c"
+        "malloc.h": "c",
+        "signal.h": "c",
+        "pthread_signal.h": "c",
+        "crtdefs.h": "c",
+        "corecrt.h": "c"
     }
 }
