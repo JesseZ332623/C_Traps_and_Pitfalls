@@ -13,6 +13,7 @@
         "signal.h": "c",
         "pthread_signal.h": "c",
         "crtdefs.h": "c",
-        "corecrt.h": "c"
+        "corecrt.h": "c",
+        "string.h": "c"
     }
 }
